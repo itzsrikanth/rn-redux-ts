@@ -1,48 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, View, Text, StatusBar} from 'react-native';
+import {connect} from 'react-redux';
+import store from './store';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// import {
+//   Header,
+//   LearnMoreLinks,
+//   Colors,
+//   DebugInstructions,
+//   ReloadInstructions,
+// } from 'react-native/Libraries/NewAppScreen';
 
-declare const global: { HermesInternal: null | {} };
+declare const global: {HermesInternal: null | {}};
 
-const App = () => {
-  const abc = () => {
-    console.log('Abc');
-  };
+const App = (props: any) => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <View>
-          <Text onPress={abc}>Hello, Godzilla</Text>
+          <Text onPress={props.click}>Hello, Godzilla</Text>
+        </View>
+        <View>
+          <Text>{props.counter}</Text>
         </View>
       </SafeAreaView>
     </>
   );
 };
 
-const styles = StyleSheet.create({});
+const mapStateToProps = (state: any) => state;
+const mapDispatchToProps = (dispatch: any) => ({
+  click: () => dispatch({
+    type: 'DYA',
+  }),
+});
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default App;
