@@ -14,3 +14,7 @@ const Wrapper = () => {
 };
 
 AppRegistry.registerComponent(appName, () => Wrapper);
+/**
+ * For React Native debugger fix
+ * https://github.com/react-native-community/cli/issues/1081#issuecomment-614223917
+ */
