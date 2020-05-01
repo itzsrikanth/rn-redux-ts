@@ -30,12 +30,16 @@ const App = (props: any) => {
 };
 
 const mapStateToProps = (state: any) => {
-  console.log(state);
   return state.main;
 };
 const mapDispatchToProps = (dispatch: any) => ({
   click: () => dispatch({
     type: 'DYA',
+    payload: {
+      request: {
+        method: 'get',
+      },
+    },
   }),
 });
 
