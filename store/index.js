@@ -11,12 +11,7 @@ const jsonPlaceholderAxios = axios.create({
 
 const store = createStore(
   reducer,
-  applyMiddleware(
-    thunk,
-    axiosMiddleware(
-      jsonPlaceholderAxios
-    )
-  ),
+  applyMiddleware(thunk, axiosMiddleware(jsonPlaceholderAxios)),
 );
 export default store;
 /**

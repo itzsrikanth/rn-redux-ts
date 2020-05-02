@@ -1,7 +1,8 @@
 import React from 'react';
-import {SafeAreaView, View, Text, StatusBar} from 'react-native';
+import {SafeAreaView, View, Text, StatusBar, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import store from './store';
+
+import Calendar from './components/calendar';
 
 // import {
 //   Header,
@@ -13,6 +14,12 @@ import store from './store';
 
 declare const global: {HermesInternal: null | {}};
 
+// const styles = StyleSheet.create({
+//   container: {
+    
+//   },
+// });
+
 const App = (props: any) => {
   return (
     <>
@@ -23,6 +30,9 @@ const App = (props: any) => {
         </View>
         <View>
           <Text>{props.counter}</Text>
+        </View>
+        <View>
+          <Calendar />
         </View>
       </SafeAreaView>
     </>
@@ -42,6 +52,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     },
   }),
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 // export default App;
