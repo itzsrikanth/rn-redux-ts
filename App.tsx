@@ -1,24 +1,10 @@
 import React from 'react';
-import {SafeAreaView, View, Text, StatusBar, StyleSheet} from 'react-native';
+import {SafeAreaView, View, Text, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 
 import Calendar from './components/calendar';
 
-// import {
-//   Header,
-//   LearnMoreLinks,
-//   Colors,
-//   DebugInstructions,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-
 declare const global: {HermesInternal: null | {}};
-
-// const styles = StyleSheet.create({
-//   container: {
-    
-//   },
-// });
 
 const App = (props: any) => {
   return (
@@ -43,16 +29,16 @@ const mapStateToProps = (state: any) => {
   return state.main;
 };
 const mapDispatchToProps = (dispatch: any) => ({
-  click: () => dispatch({
-    type: 'DYA',
-    payload: {
-      request: {
-        method: 'get',
+  click: () =>
+    dispatch({
+      type: 'DYA',
+      payload: {
+        request: {
+          method: 'get',
+        },
       },
-    },
-  }),
+    }),
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 // export default App;

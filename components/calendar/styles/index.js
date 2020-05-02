@@ -1,15 +1,35 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components';
 import theme from '../../../theme.style';
 
-const style = StyleSheet.create({
-  tick: {
-    width: 40,
-    height: 50,
-    borderRadius: 5,
-    borderColor: theme.PRIMARY_COLOR,
-    borderWidth: 1,
-    borderStyle: 'solid',
-  },
-});
+export const Containers = styled.View`
+  flex-flow: row nowrap;
+`;
 
-export default style;
+export const Tick = styled.View`
+  width: 40px;
+  height: 50px;
+  border-radius: 5px;
+  border-color: ${theme.PRIMARY_COLOR};
+  border-width: 1px;
+  border-style: solid;
+  color: ${theme.PRIMARY_COLOR};
+  align-items: center;
+  justify-content: center;
+`;
+
+const TickCommon = styled.Text`
+  color: ${theme.PRIMARY_COLOR};
+  font-size: ${theme.FONT_SIZE_MEDIUM}px;
+  text-transform: uppercase;
+`;
+
+export const TickNumber = styled(TickCommon)`
+  font-weight: bold;
+  margin-bottom: 3.5px;
+`;
+
+export const TickText = styled(TickCommon)`
+  font-size: ${theme.FONT_SIZE_XS}px;
+`;
+
+export default TickCommon;
